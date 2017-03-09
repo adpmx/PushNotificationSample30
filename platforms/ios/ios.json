@@ -1,0 +1,95 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"PushPlugin\"><param name=\"ios-package\" value=\"PushPlugin\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Notification\"><param name=\"ios-package\" value=\"CDVNotification\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Media\"><param name=\"ios-package\" value=\"CDVSound\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"Console\"><param name=\"ios-package\" value=\"CDVLogger\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "com.phonegap.plugins.PushPlugin": {
+            "PACKAGE_NAME": "com.pushapp"
+        },
+        "org.apache.cordova.core.dialogs": {
+            "PACKAGE_NAME": "com.pushapp"
+        },
+        "org.apache.cordova.core.AudioHandler": {
+            "PACKAGE_NAME": "com.pushapp"
+        },
+        "org.apache.cordova.core.console": {
+            "PACKAGE_NAME": "org.devgirl.pgb-push-app2"
+        }
+    },
+    "dependent_plugins": {},
+    "modules": [
+        {
+            "file": "plugins/org.apache.cordova.core.dialogs/www/notification.js",
+            "id": "org.apache.cordova.core.dialogs.notification",
+            "pluginId": "org.apache.cordova.core.dialogs",
+            "merges": [
+                "navigator.notification"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.core.AudioHandler/www/MediaError.js",
+            "id": "org.apache.cordova.core.AudioHandler.MediaError",
+            "pluginId": "org.apache.cordova.core.AudioHandler",
+            "clobbers": [
+                "window.MediaError"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.core.AudioHandler/www/Media.js",
+            "id": "org.apache.cordova.core.AudioHandler.Media",
+            "pluginId": "org.apache.cordova.core.AudioHandler",
+            "clobbers": [
+                "window.Media"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.core.console/www/console-via-logger.js",
+            "id": "org.apache.cordova.core.console.console",
+            "pluginId": "org.apache.cordova.core.console",
+            "clobbers": [
+                "console"
+            ]
+        },
+        {
+            "file": "plugins/org.apache.cordova.core.console/www/logger.js",
+            "id": "org.apache.cordova.core.console.logger",
+            "pluginId": "org.apache.cordova.core.console",
+            "clobbers": [
+                "cordova.logger"
+            ]
+        }
+    ],
+    "plugin_metadata": {
+        "com.phonegap.plugins.PushPlugin": "2.0.1",
+        "org.apache.cordova.core.dialogs": "0.2.0",
+        "org.apache.cordova.core.AudioHandler": "0.2.1",
+        "org.apache.cordova.core.console": "0.2.0"
+    }
+}
