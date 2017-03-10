@@ -35,7 +35,7 @@ var app = {
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
         var pushNotification = window.plugins.pushNotification;
-        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"824841663931","ecb":"app.onNotificationGCM"});
+        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"earnest-acre-136423","ecb":"app.onNotificationGCM"});
 
     },
     // Update DOM on a Received Event
@@ -43,6 +43,8 @@ var app = {
         var parentElement = document.getElementById(id);
         var listeningElement = parentElement.querySelector('.listening');
         var receivedElement = parentElement.querySelector('.received');
+        pushNotification.register(app.successHandler, app.errorHandler,{"senderID":"earnest-acre-136423","ecb":"app.onNotificationGCM"});
+
 
         listeningElement.setAttribute('style', 'display:none;');
         receivedElement.setAttribute('style', 'display:block;');
